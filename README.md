@@ -1,5 +1,5 @@
 # Plugin formWizard
-Plugin jQuery para particionar formularios web
+Plugin jQuery para particionar formularios web en pasos, y solo serán visibles los campos del paso que esté activo.
 
 # Instalación
  Se necesita incluir en el html a utilizar los archivo formWizard.js y formWizard.css del plugin, ya sea de manera local o remota
