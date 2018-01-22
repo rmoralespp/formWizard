@@ -3,8 +3,8 @@ Plugin jQuery para particionar formularios web en pasos, y solo serán visibles 
 
 # Instalación
  Se necesita incluir en el html a utilizar los archivo formWizard.js y formWizard.css del plugin, ya sea de manera local o remota
-<script src="./formWizard.js"></script> 
-<link rel="stylesheet" href="./formWizard.css">
+<.script src="./formWizard.js"></script> 
+<.link rel="stylesheet" href="./formWizard.css">
 
 # Cómo funciona?
 formWizard funciona para etiquetas de tipo form. Para ello es necesario envolver el contenido a utilizar dentro de un div
