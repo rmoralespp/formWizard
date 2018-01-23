@@ -8,7 +8,7 @@ var $form = $('#form-prueba').formWizard({
 
 var wizard = $form.data('formWizard');
 
-console.log(wizard );
+
 
 function anterior() {
    wizard.previousStep(); // Cambiar al paso anterior
