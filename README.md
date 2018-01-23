@@ -14,20 +14,20 @@ que pertenecerá.
 
 Para este HTML:
 <form id="form_test">
-	<div class="formWizard-content" >
-		<div class="form-group" data-step="1">
-			<label>..</label>
-   <input type="text">         
-  </div>     
-  <div class="form-group" data-step="2">
-    <select name="" id=""></select>
-   </div>
-   <div class="form-group" data-step="3">
-      <table></table>
-   </div>
-  </div>
-  <button onclick="return anterior()">Anterior</button>
-   <button onclick="return siguiente()">Siguiente</button>
+        <div class="formWizard-content" >
+            <div class="form-group" data-step="1">
+                <label>..</label>
+                <input type="text">         
+            </div>     
+            <div class="form-group" data-step="2">
+                <select name="" id=""></select>
+            </div>
+            <div class="form-group" data-step="3">
+                <table></table>
+            </div>
+        </div>
+        <button onclick="return anterior()">Anterior</button>
+        <button onclick="return siguiente()">Siguiente</button>
 </form>
     
 # Inicialización por defecto
