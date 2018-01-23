@@ -19,7 +19,11 @@ Para este HTML:
             <div class="form-group" data-step="1">
                 <label>..</label>
                 <input type="text">         
-            </div>     
+            </div> 
+            <div class="form-group" data-step="1">
+                <label>..</label>
+                <select name="" id=""></select>         
+            </div> 
             <div class="form-group" data-step="2">
                 <select name="" id=""></select>
             </div>
