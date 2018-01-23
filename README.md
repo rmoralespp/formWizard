@@ -13,20 +13,23 @@ cada uno de estos debe envolverse dentro de un div con el atributo data-step y c
 que pertenecerá.
 
 Para este HTML:
-<form id="form_test">
-       <div class="formWizard-content" >
-             <div data-step="1">
-                   <label>...</label>
-                   <input type="text">
-             </div>
-             <div data-step="1">
-                   <select name="" id=""></select>
-             </div>
-             <div data-step="2">
-                   <table></table>
-             </div>
+ <form id="form_test">
+        <div class="formWizard-content" >
+                <div class="form-group" data-step="1">
+                        <label>..</label>
+                        <input type="text">         
+                </div>
+                    
+                <div class="form-group" data-step="2">
+                        <select name="" id=""></select>
+                </div>
+                <div class="form-group" data-step="3">
+                        <table></table>
+                </div>
         </div>
-</form>
+        <button onclick="return anterior()">Anterior</button>
+        <button onclick="return siguiente()">Siguiente</button>
+    </form>
     
 # Inicialización por defecto
  var $form = $('#form_test').formWizard();
