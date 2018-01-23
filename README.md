@@ -1,16 +1,16 @@
 # Plugin formWizard
-Plugin jQuery para particionar formularios web en pasos, y solo serán visibles los campos del paso que esté activo.
+Plugin jQuery para particionar formularios web en pasos, de manera que solo serán visibles los campos del formulario pertenecientes al paso que esté activo.
 
 # Instalación
- Se necesita incluir en el html a utilizar los archivo formWizard.js y formWizard.css del plugin, ya sea de manera local o remota
+ Se necesita incluir en el html a utilizar los archivo **formWizard.js** y **formWizard.css** del plugin, ya sea de manera local o remota
+ 
+ ``` 
 <script src="./formWizard.js"></script> 
 <link rel="stylesheet" href="./formWizard.css">
+``` 
 
 # Cómo funciona?
-formWizard funciona para etiquetas de tipo form. Para ello es necesario envolver el contenido a utilizar dentro de un div
-con clase "formWizard-content". También es necesario especificar en cada campo del form a que paso va a pertenecer, para ello 
-cada uno de estos debe envolverse dentro de un div con el atributo data-step y como valor del atributo se establecerá el paso al 
-que pertenecerá.
+formWizard funciona para etiquetas de tipo **form**. Para ello es necesario envolver el contenido a utilizar dentro de un **div** con class **"formWizard-content"**. También es necesario especificar cada campo del formulario a que paso va a pertenecer, para ello cada uno de estos debe envolverse dentro de un **div** con el atributo **data-step** y como valor del atributo se establecerá el número del paso al que pertenecerá.
 
 Para este HTML:
 ``` 
@@ -27,8 +27,6 @@ Para este HTML:
                 <table></table>
             </div>
         </div>
-        <button onclick="return anterior()">Anterior</button>
-        <button onclick="return siguiente()">Siguiente</button>
 </form>
 ``` 
     
@@ -44,7 +42,7 @@ Nota: Todas las propiedades definidas a continuación son opcionales
  var $form = $('#form_test').formWizard({
     // Propiedades configurables
     initial_step: 1, // Si desea establecer el paso inicial en 1
-    steps_number: 3, // Es necesario definir esta propiedad para particionar el form según el número establecido, por def es 1
+    steps_number: 3, // Es necesario definir esta propiedad para particionar el form según el número establecido, por def. es 1
     speed_entry_effect: 1500, // Si desea redefinir el tiempo de entrada de las etiquetas de cada paso
     
     figure_visibility: true, // Si desea que se presente además figura que represente cada uno de los pasos y cuál está activo
