@@ -13,6 +13,7 @@ cada uno de estos debe envolverse dentro de un div con el atributo data-step y c
 que pertenecerá.
 
 Para este HTML:
+``` 
 <form id="form_test">
         <div class="formWizard-content" >
             <div class="form-group" data-step="1">
@@ -29,13 +30,17 @@ Para este HTML:
         <button onclick="return anterior()">Anterior</button>
         <button onclick="return siguiente()">Siguiente</button>
 </form>
+``` 
     
 # Inicialización por defecto
+``` 
  var $form = $('#form_test').formWizard();
  var wizard = $form.data('formWizard');
+ ``` 
  
 # Inicialización personalizada con algunos ejemplos de uso.
 Nota: Todas las propiedades definidas a continuación son opcionales
+``` 
  var $form = $('#form_test').formWizard({
     // Propiedades configurables
     initial_step: 1, // Si desea establecer el paso inicial en 1
@@ -73,12 +78,14 @@ Nota: Todas las propiedades definidas a continuación son opcionales
         console.log(this);
     },
 });
-
+``` 
 # var wizard = $form.data('formWizard');
 Se utiliza cuando inicialices el $('#form_test').formWizard(), para acceder a cada una de las funcionalidades disponibles
 
 # Funciones disponibles
+``` 
    wizard.previousStep(); // Cambiar al paso anterior
    wizard.nextStep(); // Cambiar al paso anterior
    wizard.changeStep(numero_paso); // Cambiar a  un paso específico
+   ``` 
  
