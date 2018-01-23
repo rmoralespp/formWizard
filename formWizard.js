@@ -1,4 +1,4 @@
-;(function($, window, undefined) {
+﻿;(function($, window, undefined) {
     var FormWizard = function(item_form, options) {
           this.$item_form = $(item_form);
           this.item_form = item_form;
@@ -79,7 +79,11 @@
                 } 
             }
             
-        }, 
+        },
+       
+        getNumberStep() {
+	    return this.wizard.current_step.number;
+	}, 
 
         updateVisibility: function(step_found) {
             this.$wrappers_container.children().css('display', 'none');
