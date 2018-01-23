@@ -45,24 +45,26 @@ Nota: Todas las propiedades definidas a continuación son opcionales
     steps_number: 3, // Es necesario definir esta propiedad para particionar el form según el número establecido, por def. es 1
     speed_entry_effect: 1500, // Si desea redefinir el tiempo de entrada de las etiquetas de cada paso
     
-    figure_visibility: true, // Si desea que se presente además figura que represente cada uno de los pasos y cuál está activo
+    figure_visibility: true, /* Si desea que se presente además una figura que represente cada uno de los pasos y cuál de estos   se encuentra activo */
     // Si desea redefinir los nombres y las descripciones de la figura por defecto
     figure_steps:  [
         {name: "n1", description: "description 1"},
         {name: "n2"},
         {name: "n3", description: "description 3"}
     ],
-    // Callbacks configurables
     
+    // Además cuenta con los siguientes Callbacks
+    
+    // Si desea redefinir el efecto de entrada de los campos del paso activo
     onEntryEffect: function () {
         var $wrappers  = this;
         $wrappers.slideDown(speed);
     },
     onChange: function ($wrappers, step_number) {
-        // El callback se dispara cuando ocurre un cambio de paso, en él se obtiene todos los envoltorios de los campos
-           visibles
+     /* El callback se dispara cuando ocurre un cambio de paso, en él se obtiene todos los envoltorios de los campos
+        visibles */
       
-      // Acceso al Paso en curso por contexto
+     // Acceso al Paso en curso por contexto
      var step = this;
      console.log(step.number);
      step.$wrappers.css('background-color', 'gray');
@@ -72,13 +74,14 @@ Nota: Todas las propiedades definidas a continuación son opcionales
      $wrappers.css('color','red');
 }
     },
+    // El callback se dispara cuando se presiona un click sobre los elementos de la figura, si se encuentra visible
     onClickFigureStep: function (speed) {
         console.log(this);
     },
 });
 ``` 
 # var wizard = $form.data('formWizard');
-Se utiliza cuando inicialices el $('#form_test').formWizard(), para acceder a cada una de las funcionalidades disponibles
+Se utiliza cuando inicialices el **$form = $('#form_test').formWizard()**, para acceder a cada una de las funcionalidades disponibles
 
 # Funciones disponibles
 ``` 
