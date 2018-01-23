@@ -92,5 +92,6 @@ Se utiliza cuando inicialices el **$form = $('#form_test').formWizard()**, para 
    wizard.previousStep(); // Cambiar al paso anterior
    wizard.nextStep(); // Cambiar al paso anterior
    wizard.changeStep(numero_paso); // Cambiar a  un paso específico
+   wizard.getNumberStep(); // Acceso al número del paso actual
    ``` 
  
