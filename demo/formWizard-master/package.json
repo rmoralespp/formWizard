@@ -1,0 +1,19 @@
+{
+  "name": "formwizard",
+  "version": "1.0.0",
+  "description": "Plugin de jQuery para particionar los formularios",
+  "main": "formWizard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmoralespp/formWizard.git"
+  },
+  "author": "Rolando Morales Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmoralespp/formWizard/issues"
+  },
+  "homepage": "https://github.com/rmoralespp/formWizard#readme"
+}
