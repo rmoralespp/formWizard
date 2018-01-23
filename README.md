@@ -3,8 +3,8 @@ Plugin jQuery para particionar formularios web en pasos, y solo serán visibles 
 
 # Instalación
  Se necesita incluir en el html a utilizar los archivo formWizard.js y formWizard.css del plugin, ya sea de manera local o remota
-<.script src="./formWizard.js"></script> 
-<.link rel="stylesheet" href="./formWizard.css">
+<script src="./formWizard.js"></script> 
+<link rel="stylesheet" href="./formWizard.css">
 
 # Cómo funciona?
 formWizard funciona para etiquetas de tipo form. Para ello es necesario envolver el contenido a utilizar dentro de un div
@@ -39,7 +39,7 @@ Nota: Todas las propiedades definidas a continuación son opcionales
  var $form = $('#form_test').formWizard({
     // Propiedades configurables
     initial_step: 1, // Si desea establecer el paso inicial en 1
-    steps_number: 3, // Es necesario definir esta propiedad para particionar el form según el número establecido, por defecto es 1
+    steps_number: 3, // Es necesario definir esta propiedad para particionar el form según el número establecido, por def es 1
     speed_entry_effect: 1500, // Si desea redefinir el tiempo de entrada de las etiquetas de cada paso
     
     figure_visibility: true, // Si desea que se presente además figura que represente cada uno de los pasos y cuál está activo
@@ -78,7 +78,7 @@ Nota: Todas las propiedades definidas a continuación son opcionales
 Se utiliza cuando inicialices el $('#form_test').formWizard(), para acceder a cada una de las funcionalidades disponibles
 
 # Funciones disponibles
-  wizard.previousStep(); // Cambiar al paso anterior
-  wizard.nextStep(); // Cambiar al paso anterior
-  wizard.changeStep(numero_paso); // Cambiar a  un paso específico
+   wizard.previousStep(); // Cambiar al paso anterior
+   wizard.nextStep(); // Cambiar al paso anterior
+   wizard.changeStep(numero_paso); // Cambiar a  un paso específico
  
