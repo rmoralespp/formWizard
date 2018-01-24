@@ -87,13 +87,13 @@ Nota: Todas las propiedades definidas a continuación son opcionales
     }
 });
 ``` 
-# $form.data('formWizard');
-Se utiliza para acceder al estado del asistente, así como a cada una de las funcionalidades disponibles
+# Funcionalidades disponibles
 ``` 
- var wizard = $form.data('formWizard');
- wizard.previousStep(); // Cambiar a la vista anterior
- wizard.nextStep(); // Cambiar a la vista siguiente
- wizard.changeStep(numero_paso); // Cambiar a  una vista específica
- wizard.getNumberStep(); // Acceso al número de la vista actua
+ var $form = $('#form_test').formWizard(); // Inicialización del asistente
+ var wizard = $form.data('formWizard');    // Accesso al estado y funcionalidades del asistente
+ wizard.previousStep();                    // Cambiar a la vista anterior
+ wizard.nextStep();                        // Cambiar a la vista siguiente
+ wizard.changeStep(numero_paso);           // Cambiar a  una vista específica
+ wizard.getNumberStep();                   // Acceso al número de la vista actual
 ``` 
  
