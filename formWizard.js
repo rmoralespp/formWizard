@@ -8,9 +8,9 @@
           }
     };
 
-    FormWizard.prototype = {
+    FormWizard.prototype = function () {
      
-        default_config : {
+        var default_config = {
             // Properties
             initial_step: 1,
             steps_number: 1,
@@ -23,14 +23,10 @@
             onEntryEffect: function(speed){
                 $(this).fadeIn(speed);
             },
-            onMouseoverFigureStep:  function () {},
-            onMouseoutFigureStep:   function () {},
-            onMouseenterFigureStep: function () {},
-            onMouseleaveFigureStep: function () {},
             onClickFigureStep: function () {},
     
-        },
-        init : function(options) {
+        };
+        var init = function(options) {
             this.config   =  $.extend({}, this.default_config, options);
             this.$wrappers_container =  this.$item_form.find('div.formWizard-content');
             this.wizard = {
@@ -47,25 +43,25 @@
             this.buildFigure();
             this.changeStep(this.config.initial_step); 
             
-        },
+        };
 
-        buildSteps: function() {
+        var buildSteps = function() {
             var steps = [];
             for (var i = 1; i <= this.config.steps_number; i++) {
                 steps.push({number: i, $wrappers: this.$wrappers_container.find(`div[data-step=${i}]`)});
             }
             return steps; 
-        },
+        };
 
-        nextStep: function() {
+        var nextStep = function() {
             this.changeStep(this.wizard.current_step.number + 1);
-        },
+        };
 
-        previousStep: function() {
+        var previousStep = function() {
             this.changeStep(this.wizard.current_step.number - 1);
-        },
+        };
 
-        changeStep: function(step_number) {
+        var changeStep function(step_number) {
             if(step_number >= 1 &&  step_number <= this.config.steps_number) {
                 var step_found = this.steps.find(function(step) {
                     return step.number == step_number;
@@ -79,29 +75,29 @@
                 } 
             }
             
-        },
+        };
        
-        getNumberStep() {
+        var getNumberStep = function() {
 	    return this.wizard.current_step.number;
-	}, 
+	}; 
 
-        updateVisibility: function(step_found) {
+        var updateVisibility = function(step_found) {
             this.$wrappers_container.children().css('display', 'none');
             // Establecer el contexto para el callback onEntryEffect
             this.config.onEntryEffect.apply(step_found.$wrappers, [this.config.speed_entry_effect]);
-        },
+        };
 
         // Figure manage..............................................................................
-        changeFigureStep: function (step_number) {
+        var changeFigureStep = function (step_number) {
             if(step_number >= 1 &&  step_number <= this.config.steps_number && this.config.figure_visibility) {
                 $('ul.wizard-figure > li').removeClass('active');
                 $(`ul.wizard-figure > li:nth-child(${step_number})`).addClass('active');
                                                                     
             }
             
-        },
+        };
        
-        buildFigure: function() {
+        var buildFigure = function() {
             if (this.config.figure_visibility) {
                 var $figure = $('<ul class="wizard-figure"></ul>');
                 if (this.config.figure_steps.length == this.config.steps_number) { 
@@ -122,9 +118,9 @@
                 this.$item_form.prepend($figure);
                 this.onEventsFigureStep();
             }
-        },
+        };
 
-        buildFigureStep: function(number, name, description) {
+        var buildFigureStep = function(number, name, description) {
               return `
               <li>
                   <a>
@@ -133,10 +129,10 @@
                       <span class="step-description">${description}</span>
                   </a>
               </li>`;
-        },
+        };
 
          // Figure Events..........................
-        onEventsFigureStep: function () {
+        var onEventsFigureStep = function () {
             var $selector = $(`ul.wizard-figure > li > a`);
             var that = this;
             return $selector.on({
@@ -147,12 +143,15 @@
                 },          
             });
             
-        }
-
-       
-
-        
-    };
+        };
+	//public members
+	return {
+	    nextStep: nextStep,
+	    previousStep: previousStep,
+	    changeStep: changeStep,
+            getNumberStep: getNumberStep,		
+	  };    
+    }();
 
     $.fn.formWizard = function(options) { 
         if (typeof options == 'object' || !options) {
