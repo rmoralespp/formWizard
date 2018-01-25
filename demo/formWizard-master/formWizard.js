@@ -10,7 +10,7 @@
 
     FormWizard.prototype = {
      
-        default_config : {
+        default_config: {
             // Properties
             initial_step: 1,
             steps_number: 1,
@@ -23,14 +23,10 @@
             onEntryEffect: function(speed){
                 $(this).fadeIn(speed);
             },
-            onMouseoverFigureStep:  function () {},
-            onMouseoutFigureStep:   function () {},
-            onMouseenterFigureStep: function () {},
-            onMouseleaveFigureStep: function () {},
             onClickFigureStep: function () {},
     
         },
-        init : function(options) {
+        init: function(options) {
             this.config   =  $.extend({}, this.default_config, options);
             this.$wrappers_container =  this.$item_form.find('div.formWizard-content');
             this.wizard = {
@@ -79,7 +75,11 @@
                 } 
             }
             
-        }, 
+        },
+       
+        getNumberStep: function() {
+	    return this.wizard.current_step.number;
+	}, 
 
         updateVisibility: function(step_found) {
             this.$wrappers_container.children().css('display', 'none');
@@ -119,7 +119,6 @@
                 this.onEventsFigureStep();
             }
         },
-
         buildFigureStep: function(number, name, description) {
               return `
               <li>
@@ -143,17 +142,12 @@
                 },          
             });
             
-        }
-
-       
-
-        
+        },
     };
 
-    $.fn.formWizard = function(options) {
+    $.fn.formWizard = function(options) { 
         if (typeof options == 'object' || !options) {
             this.data('formWizard', new FormWizard(this, options))
-        console.log(this.data('formWizard'));
         }
         else {
           $.error('Error, Se definió un parámetro incorrecto')
@@ -162,4 +156,3 @@
     }
 
 })(jQuery, window)
-
