@@ -61,7 +61,7 @@
             this.changeStep(this.wizard.current_step.number - 1);
         };
 
-        var changeStep function(step_number) {
+        var changeStep = function(step_number) {
             if(step_number >= 1 &&  step_number <= this.config.steps_number) {
                 var step_found = this.steps.find(function(step) {
                     return step.number == step_number;
